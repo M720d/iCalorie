@@ -26,6 +26,12 @@ struct ContentView: View {
                     .foregroundColor(.gray)
                     .padding(.horizontal)
                 
+                // list to display the information
+                List{
+                    ForEach(food) {
+                        
+                    }
+                }
 
             }
             .navigationTitle("iCalories")
