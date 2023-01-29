@@ -6,12 +6,11 @@
 //
 
 import Foundation
+import SwiftUI
 
 struct TotalCaloriesToday {
-    func todayCal() -> Int {
-     var cal = 0
-        
-        return Int(cal)
-}
+    @Environment(\.managedObjectContext) var manageObjContext
+    @FetchRequest(sortDescriptors: [SortDescriptor(\.date, order : .reverse)]) var food : FetchedResults<Food>
+    
 
 }
