@@ -31,9 +31,12 @@ struct AddFoodView: View {
                     Spacer()
                     Button("Submit"){
                         
-                        DataController().addFood(name: name, calories: calories, context: managedObjContext)
-                        
-                        dismiss() // dismissing the current view
+                        if name != "" && calories != 0 {
+                            DataController().addFood(name: name, calories: calories, context: managedObjContext)
+                            
+                            dismiss() // dismissing the current view
+                            
+                        }
                     }
                     Spacer()
                 }
