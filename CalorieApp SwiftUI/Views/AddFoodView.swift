@@ -14,6 +14,7 @@ struct AddFoodView: View {
     
     @State private var name = ""
     @State private var calories : Double = 0
+    @State private var showingAlert = false
     
     var body: some View {
         Form{
@@ -27,17 +28,27 @@ struct AddFoodView: View {
                 }
                 .padding()
                 
+                Spacer()
+                
                 HStack{
                     Spacer()
                     Button("Submit"){
                         
-                        if name != "" && calories != 0 {
+                        if name == "" || calories == 0 {
+                            showingAlert = true
+                        }
+                        
+                        else if name != "" && calories != 0 {
                             DataController().addFood(name: name, calories: calories, context: managedObjContext)
                             
                             dismiss() // dismissing the current view
                             
                         }
                     }
+                    .alert(isPresented: $showingAlert) {
+                                Alert(title: Text("Invalid Entry"), message: Text("Fill all the details"), dismissButton: .default(Text("Got it!")))
+                            }
+
                     Spacer()
                 }
             }
