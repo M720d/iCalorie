@@ -16,6 +16,7 @@
 		CD4AB34A2985996700ED5CDA /* AddFoodView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4AB3492985996700ED5CDA /* AddFoodView.swift */; };
 		CD4AB34C2985A14100ED5CDA /* TimeFormatting.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4AB34B2985A14100ED5CDA /* TimeFormatting.swift */; };
 		CD4AB34E2985A82300ED5CDA /* TotalCaloriesToday.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4AB34D2985A82300ED5CDA /* TotalCaloriesToday.swift */; };
+		CDD674B6298AA76D00C2EA87 /* EditFoodView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD674B5298AA76D00C2EA87 /* EditFoodView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		CD4AB3492985996700ED5CDA /* AddFoodView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFoodView.swift; sourceTree = "<group>"; };
 		CD4AB34B2985A14100ED5CDA /* TimeFormatting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeFormatting.swift; sourceTree = "<group>"; };
 		CD4AB34D2985A82300ED5CDA /* TotalCaloriesToday.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalCaloriesToday.swift; sourceTree = "<group>"; };
+		CDD674B5298AA76D00C2EA87 /* EditFoodView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditFoodView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +94,7 @@
 			children = (
 				CD4AB3332985866700ED5CDA /* ContentView.swift */,
 				CD4AB3492985996700ED5CDA /* AddFoodView.swift */,
+				CDD674B5298AA76D00C2EA87 /* EditFoodView.swift */,
 				CD4AB33F298586BA00ED5CDA /* DataModel */,
 			);
 			path = Views;
@@ -182,6 +185,7 @@
 				CD4AB3442985939500ED5CDA /* DataController.swift in Sources */,
 				CD4AB3322985866700ED5CDA /* iCalories.swift in Sources */,
 				CD4AB342298586FC00ED5CDA /* FoodModel.xcdatamodeld in Sources */,
+				CDD674B6298AA76D00C2EA87 /* EditFoodView.swift in Sources */,
 				CD4AB34C2985A14100ED5CDA /* TimeFormatting.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

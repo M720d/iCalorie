@@ -20,6 +20,7 @@ class DataController : ObservableObject {
     }
     
     // saving the local database
+    // MARK: SAVE FUNCTION
     func save(context : NSManagedObjectContext) {
         do {
             try
@@ -32,6 +33,7 @@ class DataController : ObservableObject {
     }
     
     // adding the food data
+    // MARK: ADDING FOOD
     func addFood(name : String, calories : Double, context : NSManagedObjectContext){
         let food = Food(context: context)
         food.id = UUID()
@@ -44,6 +46,7 @@ class DataController : ObservableObject {
     }
     
     // editing the food data
+    // MARK: EDITING THE FOOD
     func editFood(food : Food , name : String, calories : Double ,context : NSManagedObjectContext){
         food.date = Date()
         food.name = name

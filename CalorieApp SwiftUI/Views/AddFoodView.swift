@@ -17,39 +17,66 @@ struct AddFoodView: View {
     @State private var showingAlert = false
     
     var body: some View {
-        Form{
-            Section{
-                TextField("Food Name", text: $name)// text bounding to name
+        
+        // MARK: NAVIGATION VIEW DECLARATION
+        
+        NavigationView {
+            
+            // MARK: FORM DECLARATION
+            Form{
                 
-                VStack{
-                    Text("Calories : \(Int(calories))")
-                    Slider(value: $calories , in : 0...1000, step: 1)
+                // MARK: FORM CONTENT
+                Section{
+                    TextField("Food Name", text: $name)// text bounding to name
                     
-                }
-                .padding()
-                
-                Spacer()
-                
-                HStack{
-                    Spacer()
-                    Button("Submit"){
+                    VStack{
+                        Text("Calories : \(Int(calories))")
+                        Slider(value: $calories , in : 0...1000, step: 1)
                         
-                        if name == "" || calories == 0 {
-                            showingAlert = true
-                        }
-                        
-                        else if name != "" && calories != 0 {
-                            DataController().addFood(name: name, calories: calories, context: managedObjContext)
-                            
-                            dismiss() // dismissing the current view
-                            
-                        }
                     }
-                    .alert(isPresented: $showingAlert) {
-                                Alert(title: Text("Invalid Entry"), message: Text("Fill all the details"), dismissButton: .default(Text("Got it!")))
-                            }
-
+                    .padding()
+                    
                     Spacer()
+                    
+                    // MARK: SUBMIT BUTTON
+                    HStack{
+                        Spacer()
+                        Button("Submit"){
+                            
+                            if name == "" || calories == 0 {
+                                showingAlert = true
+                            }
+                            
+                            else if name != "" && calories != 0 {
+                                DataController().addFood(name: name, calories: calories, context: managedObjContext)
+                                
+                                dismiss() // dismissing the current view
+                                
+                            }
+                        }
+                        .alert(isPresented: $showingAlert) {
+                            Alert(title: Text("Invalid Entry"), message: Text("Fill all the details"), dismissButton: .default(Text("Got it!")))
+                        }
+                        
+                        Spacer()
+                    }
+                } header: {
+                    Text("Enter food details")
+                }
+            }
+            
+            // MARK: NAVIGATON BAR ITEMS AND SETTINGS
+            .navigationTitle("Add Food")
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar{
+                ToolbarItem(placement : .navigationBarLeading){
+                    Button {
+                        print("View Dismissed")
+                        dismiss()
+                        
+                    } label: {
+                        Label("Back", systemImage: "multiply")
+                    }
                 }
             }
         }
